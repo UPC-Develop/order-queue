@@ -1,0 +1,17 @@
+1645069581324	Rename package 'pe.edu.upc.passport'
+1645069614735	Rename type 'PassportController'
+1645069652228	Rename type 'AppointmentEntity'
+1645069691763	Rename type 'PassportConsumer'
+1645069731945	Rename type 'AppointmentQueueEntity'
+1645069750781	Delete element
+1645069779544	Rename type 'AppointmentRepository'
+1645069789562	Delete element
+1645069893414	Rename type 'PassportApplication'
+1645069930472	Copy package
+1645069952568	Copy package
+1645069991143	Copy package
+1645070060523	Move compilation unit
+1645070084823	Move compilation unit
+1645070124137	Copy package
+1645070234645	Copy package
+1645070246577	Delete element
