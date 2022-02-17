@@ -10,53 +10,83 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "appointment")
+@Table(name = "booking_order")
 public class OrderEntity {
 
-	public Integer id;
-	public String nationalId;
-	public String email;
-	public String campus;
-	public Date applicationDate;
+	public Integer order_id;
+	public Date order_date;
+	public Integer customer_id;
+	public Date booking_date;
+	public String status;
+	public double sub_total;
+	public double total_tax;
+	public double total;
+	public Integer active;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getId() {
-		return id;
+	public Integer getOrder_id() {
+		return order_id;
 	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	@Column(name = "national_id", nullable = false)
-	public String getNationalId() {
-		return nationalId;
-	}
-	public void setNationalId(String nationalId) {
-		this.nationalId = nationalId;
+	public void setOrder_id(Integer order_id) {
+		this.order_id = order_id;
 	}
 	
-	@Column(name = "email", nullable = false)
-	public String getEmail() {
-		return email;
+	@Column(name = "order_date", nullable = false)
+	public Date getOrder_date() {
+		return order_date;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setOrder_date(Date order_date) {
+		this.order_date = order_date;
+	}
+	@Column(name = "customer_id", nullable = false)
+	public Integer getCustomer_id() {
+		return customer_id;
+	}
+	public void setCustomer_id(Integer customer_id) {
+		this.customer_id = customer_id;
+	}
+	@Column(name = "booking_date", nullable = false)
+	public Date getBooking_date() {
+		return booking_date;
+	}
+	public void setBooking_date(Date booking_date) {
+		this.booking_date = booking_date;
+	}
+	@Column(name = "status", nullable = false)
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	@Column(name = "sub_total", nullable = false)
+	public double getSub_total() {
+		return sub_total;
+	}
+	public void setSub_total(double sub_total) {
+		this.sub_total = sub_total;
+	}
+	@Column(name = "total_tax", nullable = false)
+	public double getTotal_tax() {
+		return total_tax;
+	}
+	public void setTotal_tax(double total_tax) {
+		this.total_tax = total_tax;
+	}
+	@Column(name = "total", nullable = false)
+	public double getTotal() {
+		return total;
+	}
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	@Column(name = "active", nullable = false)
+	public Integer getActive() {
+		return active;
+	}
+	public void setActive(Integer active) {
+		this.active = active;
 	}
 	
-	@Column(name = "campus", nullable = false)
-	public String getCampus() {
-		return campus;
-	}
-	public void setCampus(String campus) {
-		this.campus = campus;
-	}
-	
-	@Column(name = "application_date", nullable = false)
-	public Date getApplicationDate() {
-		return applicationDate;
-	}
-	public void setApplicationDate(Date applicationDate) {
-		this.applicationDate = applicationDate;
-	}
 }

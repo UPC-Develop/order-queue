@@ -1,0 +1,18 @@
+package pe.edu.upc.order.entity;
+
+import java.io.Serializable;
+
+public class ProductOrderCompositeEntity implements Serializable {
+
+	private Integer order_id;
+	private Integer product_id;
+	
+	public ProductOrderCompositeEntity() {
+		
+	}
+	
+	public ProductOrderCompositeEntity(Integer order_id, Integer product_id) {
+		this.order_id = order_id;
+		this.product_id = product_id;
+	}
+}

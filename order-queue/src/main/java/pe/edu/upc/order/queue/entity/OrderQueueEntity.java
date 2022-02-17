@@ -13,10 +13,15 @@ import lombok.ToString;
 @ToString
 public class OrderQueueEntity {
 
-	public Integer id;
-	public String nationalId;
-	public String email;
-	public String campus;
-	public Date applicationDate;
-	
+	public Integer order_id;
+	public Date order_date;
+	public Integer customer_id;
+	public Date booking_date;
+	public String status;
+	public Integer product_id;
+	public double unit_price;
+	public double discount;
+	public Integer quantity;
+	public Date start_hour;
+	public Date end_hour;
 }

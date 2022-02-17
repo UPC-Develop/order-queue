@@ -1,0 +1,64 @@
+package pe.edu.upc.order.entity;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_order")
+public class ProductOrderEntity {
+
+	public Integer product_id;
+	public Integer order_id;
+	public double unit_price;
+	public double discount;
+	public Integer quantity;
+	public Date start_hour;
+	public Integer end_hour;
+	
+	public Integer getProduct_id() {
+		return product_id;
+	}
+	public void setProduct_id(Integer product_id) {
+		this.product_id = product_id;
+	}
+	public Integer getOrder_id() {
+		return order_id;
+	}
+	public void setOrder_id(Integer order_id) {
+		this.order_id = order_id;
+	}
+	public double getUnit_price() {
+		return unit_price;
+	}
+	public void setUnit_price(double unit_price) {
+		this.unit_price = unit_price;
+	}
+	public double getDiscount() {
+		return discount;
+	}
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+	public Date getStart_hour() {
+		return start_hour;
+	}
+	public void setStart_hour(Date start_hour) {
+		this.start_hour = start_hour;
+	}
+	public Integer getEnd_hour() {
+		return end_hour;
+	}
+	public void setEnd_hour(Integer end_hour) {
+		this.end_hour = end_hour;
+	}
+	
+
+}

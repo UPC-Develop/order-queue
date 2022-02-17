@@ -1,0 +1,67 @@
+package pe.edu.upc.order.entity;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_order")
+public class ProductOrderEntity {
+
+	//public Integer product_id;
+	//public Integer order_id;
+	public double unit_price;
+	public double discount;
+	public Integer quantity;
+	public Date start_hour;
+	public Date end_hour;
+	
+	@EmbeddedId
+	private ProductOrderCompositeEntity ProductOrderCompositeEntity;
+	
+	
+	@Column(name = "unit_price", nullable = false)
+	public double getUnit_price() {
+		return unit_price;
+	}
+	public void setUnit_price(double unit_price) {
+		this.unit_price = unit_price;
+	}
+	
+	@Column(name = "discount", nullable = false)
+	public double getDiscount() {
+		return discount;
+	}
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+	@Column(name = "quantity", nullable = false)
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+	@Column(name = "start_hour", nullable = false)
+	public Date getStart_hour() {
+		return start_hour;
+	}
+	public void setStart_hour(Date start_hour) {
+		this.start_hour = start_hour;
+	}
+	@Column(name = "end_hour", nullable = false)
+	public Date getEnd_hour() {
+		return end_hour;
+	}
+	public void setEnd_hour(Date end_hour) {
+		this.end_hour = end_hour;
+	}
+	
+
+}

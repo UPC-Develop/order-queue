@@ -1,0 +1,100 @@
+package pe.edu.upc.order.entity;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "order")
+public class OrderEntity {
+
+	public Integer order_id;
+	public String code;
+	public Date order_date;
+	public Integer customer_id;
+	public Date booking_date;
+	public String status;
+	public double sub_total;
+	public double total_tax;
+	public double total;
+	public Integer active;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Integer getOrder_id() {
+		return order_id;
+	}
+	public void setOrder_id(Integer order_id) {
+		this.order_id = order_id;
+	}
+	
+	@Column(name = "code", nullable = true)
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	@Column(name = "national_id", nullable = false)
+	public Date getOrder_date() {
+		return order_date;
+	}
+	public void setOrder_date(Date order_date) {
+		this.order_date = order_date;
+	}
+	@Column(name = "national_id", nullable = false)
+	public Integer getCustomer_id() {
+		return customer_id;
+	}
+	public void setCustomer_id(Integer customer_id) {
+		this.customer_id = customer_id;
+	}
+	@Column(name = "national_id", nullable = false)
+	public Date getBooking_date() {
+		return booking_date;
+	}
+	public void setBooking_date(Date booking_date) {
+		this.booking_date = booking_date;
+	}
+	@Column(name = "national_id", nullable = false)
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	@Column(name = "national_id", nullable = false)
+	public double getSub_total() {
+		return sub_total;
+	}
+	public void setSub_total(double sub_total) {
+		this.sub_total = sub_total;
+	}
+	@Column(name = "national_id", nullable = false)
+	public double getTotal_tax() {
+		return total_tax;
+	}
+	public void setTotal_tax(double total_tax) {
+		this.total_tax = total_tax;
+	}
+	@Column(name = "national_id", nullable = false)
+	public double getTotal() {
+		return total;
+	}
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	@Column(name = "national_id", nullable = false)
+	public Integer getActive() {
+		return active;
+	}
+	public void setActive(Integer active) {
+		this.active = active;
+	}
+	
+}

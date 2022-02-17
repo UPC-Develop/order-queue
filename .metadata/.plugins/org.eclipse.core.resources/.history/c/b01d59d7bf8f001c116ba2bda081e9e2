@@ -1,0 +1,35 @@
+package pe.edu.upc.order.queue.consumer;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import pe.edu.upc.order.queue.entity.OrderQueueEntity;
+import pe.edu.upc.order.entity.OrderEntity;
+import pe.edu.upc.order.queue.ConfigQueue;
+import pe.edu.upc.order.repository.OrderRepository;
+import pe.edu.upc.order.repository.ProductOrderRepository;
+
+@Component
+public class OrderConsumer {
+
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private ProductOrderRepository productOrderRepository;
+	
+	@RabbitListener(queues = ConfigQueue.QUEUE)
+	public void consumerOrderQueue(OrderQueueEntity orderQueueEntity) {
+		
+		OrderEntity orderEntity = new OrderEntity();
+		
+		appointment.nationalId = appointmentQueue.nationalId;
+		appointment.email = appointmentQueue.email;
+		appointment.campus = appointmentQueue.campus;
+		appointment.applicationDate = appointmentQueue.applicationDate;
+		
+		appointmentRepository.save(appointment);
+	}
+	
+}

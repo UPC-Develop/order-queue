@@ -1,0 +1,24 @@
+package pe.edu.upc.order.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class ProductOrderCompositeEntity implements Serializable {
+
+	@Id
+	private Integer order_id;
+	@Id
+	private Integer product_id;
+	
+	public ProductOrderCompositeEntity() {
+		
+	}
+	
+	public ProductOrderCompositeEntity(Integer order_id, Integer product_id) {
+		this.order_id = order_id;
+		this.product_id = product_id;
+	}
+}

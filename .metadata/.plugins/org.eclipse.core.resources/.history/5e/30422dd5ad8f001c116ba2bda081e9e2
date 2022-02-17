@@ -1,0 +1,20 @@
+package pe.edu.upc.order.entity;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_order")
+public class ProductOrderEntity {
+
+	public Integer product_id;
+	public Integer order_id;
+	public double unit_price;
+	public double discount;
+	public Integer quantity;
+	public LocalDateTime start_hour;
+	public Integer end_hour;
+
+}

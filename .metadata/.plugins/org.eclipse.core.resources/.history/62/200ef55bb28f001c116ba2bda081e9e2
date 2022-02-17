@@ -1,0 +1,6 @@
+package pe.edu.upc.order.queue.entity;
+
+public class OrderRequest {
+
+	
+}

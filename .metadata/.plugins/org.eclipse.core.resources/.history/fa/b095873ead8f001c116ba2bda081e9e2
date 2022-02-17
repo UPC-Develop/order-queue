@@ -1,0 +1,20 @@
+package pe.edu.upc.order.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product_order")
+public class ProductOrderEntity {
+
+	public Integer product;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+	public Integer order_id;
+}

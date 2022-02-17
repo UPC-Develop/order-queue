@@ -1,0 +1,6 @@
+package pe.edu.upc.order.request;
+
+public class OrderRequest {
+
+	
+}

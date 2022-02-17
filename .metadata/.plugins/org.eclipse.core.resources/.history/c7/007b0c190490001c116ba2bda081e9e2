@@ -1,0 +1,45 @@
+package pe.edu.upc.order.queue.consumer;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import pe.edu.upc.order.queue.entity.OrderQueueEntity;
+import pe.edu.upc.order.entity.OrderEntity;
+import pe.edu.upc.order.entity.ProductOrderEntity;
+import pe.edu.upc.order.queue.ConfigQueue;
+import pe.edu.upc.order.repository.OrderRepository;
+import pe.edu.upc.order.repository.ProductOrderRepository;
+
+@Component
+public class OrderConsumer {
+
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private ProductOrderRepository productOrderRepository;
+	
+	@RabbitListener(queues = ConfigQueue.QUEUE)
+	public void consumerOrderQueue(Lis<OrderQueueEntity> orderQueueEntityList) {
+		
+		OrderEntity orderEntity = new OrderEntity();
+		ProductOrderEntity productOrderEntity = new ProductOrderEntity();
+		
+		
+		orderEntity.order_date = orderQueueEntity.order_date;
+		orderEntity.customer_id = orderQueueEntity.customer_id;
+		orderEntity.booking_date = orderQueueEntity.booking_date;
+		orderEntity.status = orderQueueEntity.status;
+		orderEntity.sub_total = orderQueueEntity.unit_price * orderQueueEntity.quantity;
+		orderEntity.total_tax = orderEntity.sub_total * 0.18;
+		orderEntity.total = orderEntity.sub_total + orderEntity.total_tax;
+		orderEntity.active = 1;
+		
+		
+		
+		orderRepository.save(orderEntity);
+		//productOrderRepository.save(productOrderEntity);
+	}
+	
+}
